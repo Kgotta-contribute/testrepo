@@ -1,5 +1,6 @@
 # testrepo
 
-## Editing the file
+## Editing the file 🤩
 
-It's a ew file that predicts crime in your nearest neighbour using K-nn & one contains 1 simple markdown file in repository! 😋
+It's a new file that predicts crime in your proximity using K-nn  and
+another contains a simple markdown file in repository! 😋
