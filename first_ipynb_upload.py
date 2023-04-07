@@ -23,7 +23,7 @@ import os
 import pandas as pd
 
 # Set the directory path to the parent folder containing monthly folders
-directory = 'C:/Users/Chhavi/Desktop/DATA_MINING_HW/MERSEYSIDE_ONLY_CRIME'
+directory = 'C:/Users/input/filename.../.csv'
 
 # Create an empty list to store dataframes for each monthly dataset
 dfs = []
@@ -54,7 +54,7 @@ else:
 print(df.head())
 
 
-df.to_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/merged_crime_data.csv', index=False)
+df.to_csv('C:/Users/input/filename.../.csv', index=False)
 
 
 
@@ -64,7 +64,7 @@ df.info()
 import pandas as pd
 
 # Load the merged_crime_data dataset
-merged_crime_data = pd.read_csv('C:/New Volume D/DATA MINING/merged_crime_data.csv')
+merged_crime_data = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Drop rows where Crime ID is null
 merged_crime_data = merged_crime_data.dropna(subset=['Crime ID'])
@@ -83,7 +83,7 @@ df.info()
 import pandas as pd
 
 # read in your data as a pandas dataframe
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # count the total number of rows
 num_rows = df.shape[0]
@@ -94,7 +94,7 @@ print(f'The dataframe has {num_rows} rows.')
 import pandas as pd
 
 # read in your data as a pandas dataframe
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # print the dataframe to check if it's empty
 print(df)
@@ -116,7 +116,7 @@ else:
 import pandas as pd
 
 # read in your data as a pandas dataframe
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # count the total number of rows
 num_rows = df.shape[0]
@@ -198,7 +198,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Group the DataFrame by crime type and count the number of occurrences of each crime type
 crime_counts = df.groupby('Crime type')['Crime ID'].count().sort_values()
@@ -216,7 +216,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read the CSV file into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Create a horizontal bar plot of the crime types
 crime_counts = df['Crime type'].value_counts()
@@ -235,7 +235,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Group the DataFrame by crime type and count the number of occurrences of each crime type
 crime_counts = df.groupby('Crime type')['Crime ID'].count().sort_values()
@@ -257,7 +257,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Group the DataFrame by crime type and count the number of occurrences of each crime type
 crime_counts = df.groupby('Crime type')['Crime ID'].count().sort_values()
@@ -284,7 +284,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Define a dictionary that maps each crime type to a color
 color_dict = {
@@ -463,7 +463,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import OneHotEncoder
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # One-hot encode categorical variables
 ohe = OneHotEncoder()
@@ -502,7 +502,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import LabelEncoder
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Group the data by 'Crime type'
 df_violence_sexual = df[df['Crime type'] == 'Violence and sexual offences']
@@ -551,7 +551,7 @@ each fold, and the cv_scores.mean() method call will output the average accuracy
 from sklearn.model_selection import cross_val_score
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Select relevant features for prediction for 'Violence and sexual offences'
 df_violence_sexual = df[df['Crime type'] == 'Violence and sexual offences']
@@ -592,7 +592,7 @@ Here are a few things you can try to diagnose the issue:'''
 import pandas as pd
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Print out the unique values in the 'Crime type' column
 unique_crime_types = df['Crime type'].unique()
@@ -608,7 +608,7 @@ else:
 from sklearn.metrics import f1_score
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Select relevant features for prediction for 'Violence and sexual offences'
 df_violence_sexual = df[df['Crime type'] == 'Violence and sexual offences']
@@ -643,7 +643,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csv')
 
 # Group the data by 'Crime type'
 df_violence_sexual = df[df['Crime type'] == 'Violence and sexual offences']
@@ -687,7 +687,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
 
 # Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
+df = pd.read_csv('C:/Users/input/filename.../.csvv')
 
 # Group the data by 'Crime type'
 df_violence_sexual = df[df['Crime type'] == 'Violence and sexual offences']
