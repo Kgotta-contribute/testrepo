@@ -249,27 +249,8 @@ plt.ylabel('Crime Type')
 plt.show()
 
 
-import pandas as pd
 
-# Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
 
-# Convert the 'Month' column to a string type
-df['Month'] = df['Month'].astype(str)
-
-# Filter the DataFrame to include only data for the year 2022
-df_2022 = df[df['Month'].str.contains('2022')]
-
-# Group the DataFrame by crime type and count the number of occurrences of each crime type
-crime_counts = df_2022.groupby('Crime type')['Crime ID'].count().sort_values()
-
-# Create a bar plot
-plt.figure(figsize=(10, 8))
-plt.barh(crime_counts.index, crime_counts.values)
-plt.title('Amount of Crimes by Crime Type in Year 2022')
-plt.xlabel('Amount of Crimes')
-plt.ylabel('Crime Type')
-plt.show()
 
 
 import pandas as pd
@@ -476,68 +457,6 @@ print(df.dtypes)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -566,21 +485,6 @@ y_pred = knn.predict(X_test)
 # Evaluate the accuracy of the classifier
 accuracy = knn.score(X_test, y_test)
 print(f'Accuracy: {accuracy:.2f}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -626,16 +530,6 @@ y_pred = knn.predict(X_test)
 # Evaluate the accuracy of the classifier
 accuracy = knn.score(X_test, y_test)
 print(f'Accuracy: {accuracy:.2f}')
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -823,61 +717,6 @@ print(f'Training Accuracy: {train_accuracy:.2f}')
 # Evaluate the accuracy of the classifier on the testing set
 test_accuracy = dtc.score(X_test, y_test)
 print(f'Test Accuracy: {test_accuracy:.2f}')
-
-
-
-
-
-
-
-
-'''To tune hyperparameters or try a different machine learning algorithm, you can use Scikit-Learn's GridSearchCV or 
-RandomizedSearchCV functions. These functions allow you to search over a grid of hyperparameters or a range of 
-hyperparameters, respectively, and find the combination that maximizes the specified scoring metric.
-
-For example, to tune the number of neighbors (n_neighbors) hyperparameter of the KNN classifier using GridSearchCV, 
-you could do the following. This code will perform a grid search over the n_neighbors hyperparameter using 5-fold 
-cross-validation and evaluate the performance of each combination of hyperparameters using accuracy as the scoring metric. 
-The best_params_ attribute of the GridSearchCV object will contain the best hyperparameters found, and the best_score_ attribute
-will contain the corresponding score. You can then use these hyperparameters to train the KNN classifier on the entire dataset
-and evaluate its performance on a test set.
-
-'''
-
-from sklearn.model_selection import GridSearchCV
-
-# Load your dataset into a pandas DataFrame
-df = pd.read_csv('C:/Users/Chhavi/Desktop/DATA_MINING_HW/new_merged_crime_data.csv')
-
-# Subset the data to include only 'Violence and sexual offences'
-df_violence_sexual = df[df['Crime type'] == 'Violence and sexual offences']
-
-# Select relevant features for prediction
-X = df_violence_sexual[['Location', 'Longitude', 'Latitude']]
-y = df_violence_sexual['Crime type']
-
-# One-hot encode categorical variables
-ohe = OneHotEncoder()
-X_cat = ohe.fit_transform(df_violence_sexual[['Location']])
-X_num = df_violence_sexual[['Longitude', 'Latitude']]
-X = pd.concat([pd.DataFrame(X_cat.toarray()), X_num.reset_index(drop=True)], axis=1)
-
-# Define the hyperparameter grid to search over
-param_grid = {'n_neighbors': [1, 3, 5, 7, 9, 11]}
-
-# Create a GridSearchCV object and fit it to the data
-knn = KNeighborsClassifier()
-grid_search = GridSearchCV(knn, param_grid, cv=5, scoring='accuracy')
-grid_search.fit(X, y)
-
-# Print the best hyperparameters and corresponding score
-print(f'Best hyperparameters: {grid_search.best_params_}')
-print(f'Best accuracy: {grid_search.best_score_:.2f}')
-
-
-
-
-
 
 
 
